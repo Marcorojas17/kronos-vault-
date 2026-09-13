@@ -1,0 +1,6 @@
+Contact: mailto:proyectokronos@hotmail.com
+Contact: mailto:marco.a.rojas.v@hotmail.com
+Expires: 2027-07-14T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://marcorojas17.github.io/kronos-vault/.well-known/security.txt
+Policy: https://github.com/Marcorojas17/kronos-vault/blob/main/SECURITY.md
