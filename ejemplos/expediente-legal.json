@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "tipo_documento": "expediente-legal",
+  "sello_referencia": "2607146379465",
+  "titular": {
+    "nombre": "Marco Antonio Rojas Valdovinos",
+    "identificador": "2607085517331"
+  },
+  "documentos": [
+    {
+      "tipo": "certificado-safe-creative",
+      "url": "https://www.safecreative.org/certificate/2607146379465",
+      "fecha": "2026-07-14T00:46:00Z"
+    },
+    {
+      "tipo": "certificado-blockchain",
+      "tx_hash": "0xd2c2a7e128e6c81b689b3b0d9e1b31a4f6bf8df0391b7b6c05e7daa7fb895774c"
+    },
+    {
+      "tipo": "declaracion-autoridad",
+      "url": "https://github.com/Marcorojas17/kronos-vault/blob/main/docs/declaracion-de-autoridad.md"
+    }
+  ],
+  "cadena_custodia": "verificable",
+  "estado": "activo"
+}
