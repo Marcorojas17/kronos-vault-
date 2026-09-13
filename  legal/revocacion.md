@@ -71,3 +71,13 @@ Formato:
   "evidencia": "...",
   "resolucion": "..."
 }
+
+Apelación
+
+El titular puede apelar en 15 días hábiles con nueva evidencia.
+
+Contacto
+
+Email: proyectokronos@hotmail.com
+Email legal: marco.a.rojas.v@hotmail.com
+
