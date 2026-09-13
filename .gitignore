@@ -1,0 +1,36 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Node (futuro)
+node_modules/
+npm-debug.log*
+
+# Python (futuro)
+__pycache__/
+*.pyc
+
+# Secretos (NUNCA subir)
+*.key
+*.pem
+.env
+.env.local
+secrets/
+
+# Claves privadas GPG (NUNCA subir)
+*.asc.private
+private-keys/
+
+# Temporales
+*.tmp
+*.bak
+*.log
+
+# Build (futuro)
+dist/
+build/
