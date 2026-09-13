@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KRONOS | Arquitectura de Legado Digital</title>
-<meta name="description" content="Estándar privado, público, autoestablecido y verificable para la preservación, autenticidad y trazabilidad de obras digitales.">
+<meta name="description" content="Estándar privado, público, autoestablecido y verificable para la preservación, autenticidad y trazabilidad de obras digitales. Certificado Safe Creative 2607146379465.">
+<meta name="author" content="Marco Antonio Rojas Valdovinos">
+<meta property="og:title" content="KRONOS | Arquitectura de Legado Digital">
+<meta property="og:description" content="Blindamos tu legado intelectual para la eternidad. Certificado en blockchain, alineado con ISO 14721 e ISO 27001.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -51,9 +55,21 @@ section .sub{color:rgba(255,255,255,0.6);max-width:700px;margin-bottom:48px}
 details{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 24px;margin-bottom:12px;cursor:pointer}
 summary{font-weight:600}
 details p{margin-top:12px;color:rgba(255,255,255,0.6)}
+.certificado-box{background:linear-gradient(135deg,rgba(227,6,19,0.1),rgba(227,6,19,0.02));border:1px solid rgba(227,6,19,0.3);border-radius:20px;padding:32px;margin-top:32px;text-align:center}
+.certificado-box h3{font-size:1.5rem;margin-bottom:12px}
+.certificado-box p{color:rgba(255,255,255,0.7);margin-bottom:16px}
+.certificado-box .code{font-family:'JetBrains Mono',monospace;color:#e30613;font-size:0.9rem;word-break:break-all}
 footer{padding:48px 0;text-align:center;color:rgba(255,255,255,0.4);font-size:0.85rem}
 footer a{color:#e30613;text-decoration:none}
-@media (max-width:768px){.hero h1{font-size:2.2rem}.btn{display:block;width:100%;margin-bottom:12px;text-align:center}.btn-outline{margin-left:0}.countdown{flex-wrap:wrap}nav{display:none}}
+footer a:hover{text-decoration:underline}
+@media (max-width:768px){
+.hero h1{font-size:2.2rem}
+.btn{display:block;width:100%;margin-bottom:12px;text-align:center}
+.btn-outline{margin-left:0}
+.countdown{flex-wrap:wrap}
+nav{display:none}
+section h2{font-size:1.8rem}
+}
 </style>
 </head>
 <body>
@@ -66,6 +82,7 @@ footer a{color:#e30613;text-decoration:none}
 <nav>
 <a href="#como">Cómo funciona</a>
 <a href="#precios">Precios</a>
+<a href="#verificacion">Verificación</a>
 <a href="#faq">FAQ</a>
 </nav>
 </header>
@@ -100,13 +117,13 @@ footer a{color:#e30613;text-decoration:none}
 <h2>Así de simple. Así de <span>poderoso</span>.</h2>
 <p class="sub">Tres pasos para asegurar tu legado para siempre.</p>
 <div class="grid-3">
-<div class="card"><h3>1. Sube tu obra</h3><p>Selecciona el archivo que quieres proteger. Calculamos su huella digital única en tu navegador.</p></div>
+<div class="card"><h3>1. Sube tu obra</h3><p>Selecciona el archivo que quieres proteger. Calculamos su huella digital única en tu navegador, sin subirlo a ningún servidor.</p></div>
 <div class="card"><h3>2. Paga seguro</h3><p>Usa Mercado Pago. Al confirmarse, recibirás un email para enviarnos tu archivo y datos.</p></div>
 <div class="card"><h3>3. Recibe tu certificado</h3><p>En 24h te enviamos el Certificado Kronos firmado, con sello de tiempo y registro en blockchain.</p></div>
 </div>
 <div class="hash-box">
 <h3 style="margin-bottom:12px;">Prueba la tecnología ahora</h3>
-<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:16px;">Selecciona un archivo y obtén su SHA-256 al instante. Sin subirlo a ningún servidor.</p>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:16px;">Selecciona un archivo y obtén su SHA-256 al instante. Todo ocurre en tu dispositivo.</p>
 <input type="file" id="fileInput">
 <div class="hash-output" id="hashOutput">El hash aparecerá aquí...</div>
 </div>
@@ -126,23 +143,39 @@ footer a{color:#e30613;text-decoration:none}
 <h3>Legado <span style="color:#e30613;font-size:0.8rem;">★ Más popular</span></h3>
 <div class="price">$149</div>
 <ul><li>Certificado Kronos firmado</li><li>Sello de tiempo Safe Creative</li><li>Registro en blockchain Ethereum</li><li>Pasaporte Génesis</li><li>Entrega en 24h</li></ul>
-<a href="mailto:proyectokronos@hotmail.com?subject=Quiero%20Plan%20Legado%20$149" class="btn">Comprar Plan Legado</a>
+<!-- ⚠️ REEMPLAZA href CON TU LINK REAL DE MERCADO PAGO ($149 USD) -->
+<a href="https://mpago.la/TU_LINK_LEGADO" target="_blank" class="btn">Comprar Plan Legado</a>
 </div>
 <div class="card">
 <h3>Eterno</h3>
 <div class="price">$499</div>
 <ul><li>Todo lo del Plan Legado</li><li>Monitoreo activo 1 año</li><li>Alertas legales automáticas</li><li>Almacenamiento redundante</li><li>Soporte prioritario</li></ul>
-<a href="mailto:proyectokronos@hotmail.com?subject=Quiero%20Plan%20Eterno%20$499" class="btn">Comprar Plan Eterno</a>
+<!-- ⚠️ REEMPLAZA href CON TU LINK REAL DE MERCADO PAGO ($499 USD) -->
+<a href="https://mpago.la/TU_LINK_ETERNO" target="_blank" class="btn">Comprar Plan Eterno</a>
 </div>
+</div>
+</section>
+
+<section id="verificacion">
+<h2>Verificación <span>pública</span>.</h2>
+<p class="sub">Nuestro propio certificado es verificable por cualquier tercero, sin contactarnos. Así funciona el estándar.</p>
+<div class="certificado-box">
+<h3>Certificado Safe Creative 2607146379465</h3>
+<p>KRONOS — Arquitectura de Legado Digital</p>
+<p class="code">SHA-256: f03f7e2d852617309457e0fe207f8f8bd2627d0b723de02f3b0ce05767219112</p>
+<p style="margin-top:16px;font-size:0.85rem;color:rgba(255,255,255,0.5);">Sellado el 14 de julio de 2026, 0:46 UTC · Anclado en Ethereum</p>
+<a href="https://www.safecreative.org/certificate/2607146379465" target="_blank" class="btn" style="margin-top:16px;">Verificar certificado</a>
 </div>
 </section>
 
 <section id="faq">
 <h2>Preguntas <span>frecuentes</span>.</h2>
-<details><summary>¿Qué es exactamente lo que recibo?</summary><p>Un certificado PDF firmado digitalmente con tu nombre, el hash SHA-256 de tu archivo, sello de tiempo de Safe Creative y registro en blockchain. Es una prueba legalmente admisible de autoría y fecha.</p></details>
+<details><summary>¿Qué es exactamente lo que recibo?</summary><p>Un certificado PDF firmado digitalmente con tu nombre, el hash SHA-256 de tu archivo, sello de tiempo de Safe Creative y registro en blockchain Ethereum. Es una prueba legalmente admisible de autoría y fecha.</p></details>
 <details><summary>¿Cómo se protege mi archivo?</summary><p>No almacenamos tu archivo original. Solo guardamos su huella digital (hash). Tú conservas el archivo, y el certificado prueba que existía en esa fecha exacta.</p></details>
 <details><summary>¿Qué pasa si alguien usa mi obra sin permiso?</summary><p>El certificado te sirve como prueba en un juicio o reclamación DMCA. Además, el Plan Eterno incluye monitoreo y alertas legales.</p></details>
 <details><summary>¿Es válido internacionalmente?</summary><p>Sí. Safe Creative es un registro internacional con sellado de tiempo cualificado (QTSA) y blockchain Ethereum. Alineado con ISO 14721 (OAIS) e ISO 27001.</p></details>
+<details><summary>¿Pueden usar mi obra para entrenar IA?</summary><p>No. La licencia CC BY-NC-ND 4.0 prohíbe expresamente el uso de tu obra para entrenar modelos de inteligencia artificial. Es uno de los 6 principios fundamentales de Kronos-Vault.</p></details>
+<details><summary>¿Qué diferencia hay entre Kronos-Vault y un notario?</summary><p>Kronos-Vault es complementario. Prueba existencia e integridad de un archivo digital con precisión criptográfica. Un notario certifica actos jurídicos. Se recomienda usar ambos.</p></details>
 </section>
 
 <section style="text-align:center;">
@@ -150,12 +183,13 @@ footer a{color:#e30613;text-decoration:none}
 <p class="sub" style="margin:0 auto 40px;">Cada día que pasa sin protección es un día de riesgo. Asegúralo hoy.</p>
 <a href="#precios" class="btn" style="font-size:1.2rem;padding:20px 60px;">Quiero proteger mi obra ahora</a>
 <p style="margin-top:24px;color:rgba(255,255,255,0.4);">¿Dudas? Escríbenos a <a href="mailto:proyectokronos@hotmail.com" style="color:#e30613;">proyectokronos@hotmail.com</a></p>
+<p style="margin-top:8px;color:rgba(255,255,255,0.4);">WhatsApp: <a href="https://wa.me/527225862335" style="color:#e30613;">+52 722 586 2335</a></p>
 </section>
 
 <footer>
 <p>KRONOS — Arquitectura de Legado Digital © 2026. Todos los derechos reservados.</p>
-<p style="margin-top:8px;">Marco Antonio Rojas Valdovinos. <a href="https://www.safecreative.org/certificate/2607146379465" target="_blank">Certificado Safe Creative 2607146379465</a></p>
-<p style="margin-top:8px;"><a href="https://github.com/Marcorojas17/kronos-vault-">Repositorio oficial</a></p>
+<p style="margin-top:8px;">Marco Antonio Rojas Valdovinos · <a href="https://www.safecreative.org/certificate/2607146379465" target="_blank">Certificado Safe Creative 2607146379465</a></p>
+<p style="margin-top:8px;"><a href="https://github.com/Marcorojas17/kronos-vault">Repositorio oficial</a> · <a href="mailto:proyectokronos@hotmail.com">Contacto</a></p>
 </footer>
 </div>
 
