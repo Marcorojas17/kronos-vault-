@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1.0",
+  "id": "0000000000000",
+  "estado": "revocado",
+  "fecha_sellado": "2026-01-01T00:00:00Z",
+  "fecha_revocacion": "2026-03-15T12:00:00Z",
+  "causal_revocacion": "Solicitud del titular por cambio de estrategia.",
+  "titular": {
+    "nombre": "Ejemplo Ficticio",
+    "identificador": "0000000000000",
+    "email": "ejemplo@example.com",
+    "pais": "MEX"
+  },
+  "obra": {
+    "titulo": "Obra de ejemplo revocada",
+    "tipo": "Otros",
+    "archivo": "ejemplo.txt",
+    "tamano_bytes": 100,
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "sha512": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "licencia": {
+    "tipo": "CC BY-NC-ND 4.0",
+    "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    "prohibe_entrenamiento_ia": true,
+    "prohibe_uso_comercial": true,
+    "requiere_atribucion": true
+  },
+  "principios": [
+    "Integridad",
+    "Trazabilidad",
+    "No Comercialización",
+    "No Entrenamiento de IA",
+    "Citación Obligatoria",
+    "Defensa Activa"
+  ]
+}
