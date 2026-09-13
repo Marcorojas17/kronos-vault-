@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1.0",
+  "ultima_actualizacion": "2026-07-14T00:46:00Z",
+  "total_registros": 1,
+  "total_activos": 1,
+  "total_revocados": 0,
+  "registros": [
+    {
+      "id": "2607146379465",
+      "estado": "activo",
+      "fecha_sellado": "2026-07-14T00:46:00Z",
+      "titular": {
+        "nombre": "Marco Antonio Rojas Valdovinos",
+        "identificador": "2607085517331",
+        "pais": "MEX"
+      },
+      "obra": {
+        "titulo": "KRONOS — Arquitectura de Legado Digital",
+        "tipo": "Literaria - Otros",
+        "archivo": "arquitectura.md.md",
+        "tamano_bytes": 3336,
+        "sha256": "f03f7e2d852617309457e0fe207f8f8bd2627d0b723de02f3b0ce05767219112",
+        "sha512": "6e496b836b813aa63419ad5141e1c41cada02df13337c85f1fa976fe7f9547b6bdc44828cb5029111a07e336df0eadc42320c1e9e39e65a6a34fd51403ed2140"
+      },
+      "sellos_de_tiempo": {
+        "interno": {
+          "autoridad": "Safe Creative",
+          "token": "timestamp-safecreative.asn"
+        },
+        "externo_qtsa": {
+          "autoridad": "Firmaprofesional ICA B02 QUALIFIED QTSA 2022",
+          "pais": "ES",
+          "token": "timestamp-external.asn"
+        }
+      },
+      "blockchain": {
+        "cadena": "Ethereum",
+        "tx_hash": "0xd2c2a7e128e6c81b689b3b0d9e1b31a4f6bf8df0391b7b6c05e7daa7fb895774c",
+        "url_explorador": "https://etherscan.io/tx/0xd2c2a7e128e6c81b689b3b0d9e1b31a4f6bf8df0391b7b6c05e7daa7fb895774c"
+      },
+      "licencia": {
+        "tipo": "CC BY-NC-ND 4.0",
+        "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+        "prohibe_entrenamiento_ia": true,
+        "prohibe_uso_comercial": true,
+        "requiere_atribucion": true
+      },
+      "verificacion": "https://www.safecreative.org/certificate/2607146379465"
+    }
+  ]
+}
