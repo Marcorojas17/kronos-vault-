@@ -17,22 +17,10 @@ Su diseño se alinea con **ISO 14721 (OAIS)** e **ISO/IEC 27001** mediante autoe
 | Certificado Safe Creative | `2607146379465` |
 | Verificación pública | https://www.safecreative.org/certificate/2607146379465 |
 | Autor y titular | Marco Antonio Rojas Valdovinos |
+| Repositorio | https://github.com/Marcorojas17/kronos-vault |
+| Sitio web | https://marcorojas17.github.io/kronos-vault |
 | Licencia de obra | CC BY-NC-ND 4.0 |
 | Licencia de código | MIT (solo para `schemas/` y `tests/`) |
-
----
-
-## Qué es Kronos-Vault
-
-Kronos-Vault no es un producto. Es un **estándar abierto, verificable y autoestablecido** para:
-
-1. Calcular la huella digital de una obra (SHA-256, SHA-512).
-2. Aplicar sellado de tiempo cualificado (eIDAS / QTSA).
-3. Emitir un certificado verificable públicamente.
-4. Auditar la existencia en blockchain.
-5. Permitir la validación independiente por terceros sin depender del autor.
-
-Cualquier persona puede usar el esquema. Cualquier verificador puede comprobarlo. Ningún actor controla el estándar.
 
 ---
 
@@ -47,54 +35,31 @@ Cualquier persona puede usar el esquema. Cualquier verificador puede comprobarlo
 
 ---
 
-## Estructura del repositorio
+## Estructura
+
 kronos-vault/
-├── index.html                 # Landing pública
-├── README.md                  # Este archivo
-├── LICENSE                    # CC BY-NC-ND 4.0 (obra)
-├── LICENSE-CODE.md            # MIT (código)
-├── VERSION
-├── CHANGELOG.md
-├── CONTRIBUTING.md
-├── CODE_OF_CONDUCT.md
-├── SECURITY.md
-├── .gitignore
-├── docs/                      # Documentación técnica y conceptual
-├── legal/                     # Términos, privacidad, IP
-├── gobernanza/                # Reglas de evolución del estándar
-├── comunidad/                 # Código de conducta, contribuciones
-├── registro/                  # Registros públicos (JSON)
-├── schemas/                   # JSON Schemas del estándar
-├── ejemplos/                  # Casos válidos, inválidos, límite
-├── tests/                     # Pruebas de conformidad
-├── prensa/                    # Comunicados y kit
-├── assets/                    # Identidad visual
-├── .well-known/               # security.txt
-└── api/                       # Fase futura (no implementado)
+├── index.html
+├── README.md
+├── LICENSE
+├── LICENSE-CODE.md
+├── docs/
+├── legal/
+├── gobernanza/
+├── comunidad/
+├── registro/
+├── schemas/
+├── ejemplos/
+├── tests/
+├── prensa/
+├── assets/
+└── .well-known/
 
-
----
-
-## Cómo validar un sello
-
-1. Descarga el archivo `schemas/sello-kronos-vault.schema.json`.
-2. Toma un registro de `registro/indice-publico.json`.
-3. Valida el registro contra el schema con cualquier validador JSON Schema (Draft 2020-12).
-4. Verifica la huella SHA-256 del archivo original.
-5. Consulta el sello de tiempo en la autoridad correspondiente.
-
-Ver [`docs/procedimiento-validacion.md`](docs/procedimiento-validacion.md) para el procedimiento completo.
 
 ---
 
 ## Los 100 Génesis
 
-Kronos-Vault abre **100 plazas fundacionales**. Quienes las ocupen:
-
-- Reciben el Pasaporte Génesis (registro verificable).
-- Acceso vitalicio al Plan Eterno.
-- Voz en la gobernanza del estándar.
-- Su caso se documenta en `registro/` como parte del origen.
+Kronos-Vault abre **100 plazas fundacionales**. Quienes las ocupen reciben el Pasaporte Génesis, acceso vitalicio al Plan Eterno y voz en la gobernanza del estándar.
 
 Cuando se llenen las 100, el precio sube y el Pasaporte Génesis deja de emitirse.
 
@@ -102,9 +67,11 @@ Cuando se llenen las 100, el precio sube y el Pasaporte Génesis deja de emitirs
 
 ## Contacto
 
-**Email:** hola@kronoslegado.com
-**Web:** [tu usuario].github.io/kronos-vault
-**Verificación:** https://www.safecreative.org/certificate/2607146379465
+- **Prensa y clientes:** proyectokronos@hotmail.com
+- **Asuntos legales:** marco.a.rojas.v@hotmail.com
+- **WhatsApp:** +52 722 586 2335
+- **GitHub:** https://github.com/Marcorojas17/kronos-vault
+- **Verificación:** https://www.safecreative.org/certificate/2607146379465
 
 ---
 
