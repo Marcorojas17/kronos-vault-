@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kronos-vault.github.io/schemas/incidente.schema.json",
+  "title": "Incidente",
+  "description": "Registro de incidente de seguridad o integridad",
+  "type": "object",
+  "required": ["id", "fecha_deteccion", "severidad", "tipo", "descripcion", "estado"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "fecha_deteccion": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "fecha_resolucion": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severidad": {
+      "type": "string",
+      "enum": ["critica", "alta", "media", "baja"]
+    },
+    "tipo": {
+      "type": "string",
+      "enum": [
+        "compromiso_clave",
+        "uso_no_autorizado",
+        "alteracion_registro",
+        "suplantacion",
+        "filtracion_datos",
+        "error_documental"
+      ]
+    },
+    "descripcion": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 5000
+    },
+    "estado": {
+      "type": "string",
+      "enum": ["detectado", "contenido", "erradicado", "recuperado", "cerrado"]
+    },
+    "evidencia": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "acciones_tomadas": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "post_mortem_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
