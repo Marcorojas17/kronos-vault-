@@ -1,0 +1,10 @@
+{
+  "titulo": "Serie pictórica de ejemplo",
+  "tipo": "Artística - Visual",
+  "archivo": "serie-ejemplo.zip",
+  "tamano_bytes": 10485760,
+  "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "sha512": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+  "descripcion": "Serie pictórica de ejemplo con 12 obras digitales.",
+  "fecha_creacion": "2026-02-20"
+}
