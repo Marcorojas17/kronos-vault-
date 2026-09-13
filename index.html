@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KRONOS | Arquitectura de Legado Digital</title>
+<meta name="description" content="Estándar privado, público, autoestablecido y verificable para la preservación, autenticidad y trazabilidad de obras digitales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;line-height:1.6}
+canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%,rgba(10,10,10,0.4) 0%,rgba(10,10,10,0.95) 80%);z-index:1;pointer-events:none}
+.content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-weight:800;font-size:1.5rem;letter-spacing:-0.5px;color:#fff;text-decoration:none}
+.logo span{color:#e30613}
+nav a{color:rgba(255,255,255,0.7);text-decoration:none;margin-left:24px;font-size:0.9rem;transition:color 0.3s}
+nav a:hover{color:#fff}
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:80px 0}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:#e30613}
+.hero p{font-size:1.2rem;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:40px}
+.countdown{display:flex;gap:16px;margin-bottom:40px;flex-wrap:wrap}
+.countdown div{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:12px 20px;border-radius:12px;text-align:center;min-width:80px}
+.countdown .num{font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700;color:#e30613;display:block}
+.countdown .label{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5)}
+.btn{display:inline-block;background:#e30613;color:#fff;padding:16px 40px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1rem;transition:all 0.3s;border:none;cursor:pointer;box-shadow:0 0 20px rgba(227,6,19,0.4)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(227,6,19,0.8);background:#ff1a2a}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);box-shadow:none;margin-left:16px}
+.btn-outline:hover{background:rgba(255,255,255,0.05);box-shadow:none;border-color:#fff}
+section{padding:100px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+section h2{font-size:2.5rem;font-weight:800;letter-spacing:-1px;margin-bottom:16px}
+section h2 span{color:#e30613}
+section .sub{color:rgba(255,255,255,0.6);max-width:700px;margin-bottom:48px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px;backdrop-filter:blur(10px);transition:all 0.3s}
+.card:hover{border-color:rgba(227,6,19,0.5);transform:translateY(-4px)}
+.card h3{font-size:1.3rem;margin-bottom:12px}
+.card p{color:rgba(255,255,255,0.6);font-size:0.95rem}
+.card .price{font-family:'JetBrains Mono',monospace;font-size:2.5rem;font-weight:700;color:#e30613;margin:16px 0}
+.card ul{list-style:none;margin:20px 0}
+.card ul li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);font-size:0.9rem}
+.card ul li::before{content:'✓ ';color:#e30613;font-weight:700}
+.hash-box{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;margin-top:24px}
+.hash-box input[type="file"]{display:block;margin-bottom:16px;color:#fff}
+.hash-output{font-family:'JetBrains Mono',monospace;font-size:0.8rem;word-break:break-all;color:#e30613;background:rgba(227,6,19,0.05);padding:16px;border-radius:8px;border:1px solid rgba(227,6,19,0.2);min-height:60px}
+details{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px 24px;margin-bottom:12px;cursor:pointer}
+summary{font-weight:600}
+details p{margin-top:12px;color:rgba(255,255,255,0.6)}
+footer{padding:48px 0;text-align:center;color:rgba(255,255,255,0.4);font-size:0.85rem}
+footer a{color:#e30613;text-decoration:none}
+@media (max-width:768px){.hero h1{font-size:2.2rem}.btn{display:block;width:100%;margin-bottom:12px;text-align:center}.btn-outline{margin-left:0}.countdown{flex-wrap:wrap}nav{display:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="overlay"></div>
+
+<div class="content">
+<header>
+<a href="#" class="logo">KRONOS<span>.</span></a>
+<nav>
+<a href="#como">Cómo funciona</a>
+<a href="#precios">Precios</a>
+<a href="#faq">FAQ</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Blindamos tu legado<br>intelectual para la <span>eternidad</span>.</h1>
+<p>Kronos-Vault es el primer estándar verificable de preservación digital con trazabilidad legal global. Tu voz, principios y obras permanecerán íntegros hasta 2099 y más allá.</p>
+<div class="countdown" id="countdown">
+<div><span class="num" id="days">00</span><span class="label">Días</span></div>
+<div><span class="num" id="hours">00</span><span class="label">Horas</span></div>
+<div><span class="num" id="mins">00</span><span class="label">Min</span></div>
+<div><span class="num" id="secs">00</span><span class="label">Seg</span></div>
+</div>
+<p style="font-size:0.9rem;color:#e30613;margin-bottom:24px;">⚠️ Precio de lanzamiento termina el 1 de octubre de 2026. Quedan 100 Pasaportes Génesis.</p>
+<div>
+<a href="#precios" class="btn">Asegurar mi legado</a>
+<a href="#como" class="btn btn-outline">Ver cómo funciona</a>
+</div>
+</section>
+
+<section>
+<h2>El <span>70%</span> de los legados digitales desaparecen en 10 años.</h2>
+<p class="sub">Tus archivos, obras y decisiones están en riesgo: olvido, censura, uso indebido por IA, o simplemente pérdida. Kronos-Vault los blinda con criptografía y sellado de tiempo.</p>
+<div class="grid-3">
+<div class="card"><h3>🔒 Integridad</h3><p>Cada archivo se sella con SHA-256 y SHA-512. Cualquier modificación rompe la cadena de custodia.</p></div>
+<div class="card"><h3>📅 Trazabilidad</h3><p>Fecha, hora y origen de cada interacción quedan registrados en blockchain Ethereum.</p></div>
+<div class="card"><h3>⚖️ Defensa activa</h3><p>Alertas legales automáticas ante violaciones de derechos de autor o entrenamiento de IA.</p></div>
+</div>
+</section>
+
+<section id="como">
+<h2>Así de simple. Así de <span>poderoso</span>.</h2>
+<p class="sub">Tres pasos para asegurar tu legado para siempre.</p>
+<div class="grid-3">
+<div class="card"><h3>1. Sube tu obra</h3><p>Selecciona el archivo que quieres proteger. Calculamos su huella digital única en tu navegador.</p></div>
+<div class="card"><h3>2. Paga seguro</h3><p>Usa Mercado Pago. Al confirmarse, recibirás un email para enviarnos tu archivo y datos.</p></div>
+<div class="card"><h3>3. Recibe tu certificado</h3><p>En 24h te enviamos el Certificado Kronos firmado, con sello de tiempo y registro en blockchain.</p></div>
+</div>
+<div class="hash-box">
+<h3 style="margin-bottom:12px;">Prueba la tecnología ahora</h3>
+<p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:16px;">Selecciona un archivo y obtén su SHA-256 al instante. Sin subirlo a ningún servidor.</p>
+<input type="file" id="fileInput">
+<div class="hash-output" id="hashOutput">El hash aparecerá aquí...</div>
+</div>
+</section>
+
+<section id="precios">
+<h2>Elige tu nivel de <span>protección</span>.</h2>
+<p class="sub">Pago único. Sin suscripciones ocultas. Tu legado asegurado para siempre.</p>
+<div class="grid-3">
+<div class="card">
+<h3>Semilla</h3>
+<div class="price">$0</div>
+<ul><li>Hash SHA-256 en navegador</li><li>Guía de preservación PDF</li><li>Sin certificado legal</li></ul>
+<a href="mailto:proyectokronos@hotmail.com?subject=Quiero%20Plan%20Semilla" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.3);box-shadow:none;">Empezar gratis</a>
+</div>
+<div class="card" style="border-color:#e30613;box-shadow:0 0 40px rgba(227,6,19,0.2);">
+<h3>Legado <span style="color:#e30613;font-size:0.8rem;">★ Más popular</span></h3>
+<div class="price">$149</div>
+<ul><li>Certificado Kronos firmado</li><li>Sello de tiempo Safe Creative</li><li>Registro en blockchain Ethereum</li><li>Pasaporte Génesis</li><li>Entrega en 24h</li></ul>
+<a href="mailto:proyectokronos@hotmail.com?subject=Quiero%20Plan%20Legado%20$149" class="btn">Comprar Plan Legado</a>
+</div>
+<div class="card">
+<h3>Eterno</h3>
+<div class="price">$499</div>
+<ul><li>Todo lo del Plan Legado</li><li>Monitoreo activo 1 año</li><li>Alertas legales automáticas</li><li>Almacenamiento redundante</li><li>Soporte prioritario</li></ul>
+<a href="mailto:proyectokronos@hotmail.com?subject=Quiero%20Plan%20Eterno%20$499" class="btn">Comprar Plan Eterno</a>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<h2>Preguntas <span>frecuentes</span>.</h2>
+<details><summary>¿Qué es exactamente lo que recibo?</summary><p>Un certificado PDF firmado digitalmente con tu nombre, el hash SHA-256 de tu archivo, sello de tiempo de Safe Creative y registro en blockchain. Es una prueba legalmente admisible de autoría y fecha.</p></details>
+<details><summary>¿Cómo se protege mi archivo?</summary><p>No almacenamos tu archivo original. Solo guardamos su huella digital (hash). Tú conservas el archivo, y el certificado prueba que existía en esa fecha exacta.</p></details>
+<details><summary>¿Qué pasa si alguien usa mi obra sin permiso?</summary><p>El certificado te sirve como prueba en un juicio o reclamación DMCA. Además, el Plan Eterno incluye monitoreo y alertas legales.</p></details>
+<details><summary>¿Es válido internacionalmente?</summary><p>Sí. Safe Creative es un registro internacional con sellado de tiempo cualificado (QTSA) y blockchain Ethereum. Alineado con ISO 14721 (OAIS) e ISO 27001.</p></details>
+</section>
+
+<section style="text-align:center;">
+<h2>Tu legado no puede esperar.</h2>
+<p class="sub" style="margin:0 auto 40px;">Cada día que pasa sin protección es un día de riesgo. Asegúralo hoy.</p>
+<a href="#precios" class="btn" style="font-size:1.2rem;padding:20px 60px;">Quiero proteger mi obra ahora</a>
+<p style="margin-top:24px;color:rgba(255,255,255,0.4);">¿Dudas? Escríbenos a <a href="mailto:proyectokronos@hotmail.com" style="color:#e30613;">proyectokronos@hotmail.com</a></p>
+</section>
+
+<footer>
+<p>KRONOS — Arquitectura de Legado Digital © 2026. Todos los derechos reservados.</p>
+<p style="margin-top:8px;">Marco Antonio Rojas Valdovinos. <a href="https://www.safecreative.org/certificate/2607146379465" target="_blank">Certificado Safe Creative 2607146379465</a></p>
+<p style="margin-top:8px;"><a href="https://github.com/Marcorojas17/kronos-vault-">Repositorio oficial</a></p>
+</footer>
+</div>
+
+<script>
+const canvas=document.getElementById('bg');
+const ctx=canvas.getContext('2d');
+let width,height;
+let particles=[];
+const PARTICLE_COUNT=80;
+const MAX_DIST=150;
+
+function resize(){width=canvas.width=window.innerWidth;height=canvas.height=window.innerHeight}
+window.addEventListener('resize',resize);
+resize();
+
+class Particle{
+constructor(){this.x=Math.random()*width;this.y=Math.random()*height;this.vx=(Math.random()-0.5)*0.5;this.vy=(Math.random()-0.5)*0.5;this.radius=Math.random()*2+1}
+update(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>width)this.vx*=-1;if(this.y<0||this.y>height)this.vy*=-1}
+draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,0.6)';ctx.fill()}
+}
+
+for(let i=0;i<PARTICLE_COUNT;i++){particles.push(new Particle())}
+
+function animate(){
+ctx.clearRect(0,0,width,height);
+for(let i=0;i<particles.length;i++){
+for(let j=i+1;j<particles.length;j++){
+const dx=particles[i].x-particles[j].x;
+const dy=particles[i].y-particles[j].y;
+const dist=Math.sqrt(dx*dx+dy*dy);
+if(dist<MAX_DIST){
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+const alpha=1-(dist/MAX_DIST);
+ctx.strokeStyle='rgba(227,6,19,'+(alpha*0.3)+')';
+ctx.lineWidth=0.5;
+ctx.stroke();
+}
+}
+}
+particles.forEach(p=>{p.update();p.draw()});
+requestAnimationFrame(animate);
+}
+animate();
+
+const deadline=new Date("2026-10-01T00:00:00").getTime();
+function updateCountdown(){
+const now=new Date().getTime();
+const diff=deadline-now;
+if(diff<=0){document.getElementById('countdown').innerHTML='<p style="color:#e30613;font-weight:700;">¡Oferta terminada!</p>';return}
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const mins=Math.floor((diff%(1000*60*60))/(1000*60));
+const secs=Math.floor((diff%(1000*60))/1000);
+document.getElementById('days').textContent=String(days).padStart(2,'0');
+document.getElementById('hours').textContent=String(hours).padStart(2,'0');
+document.getElementById('mins').textContent=String(mins).padStart(2,'0');
+document.getElementById('secs').textContent=String(secs).padStart(2,'0');
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+const fileInput=document.getElementById('fileInput');
+const hashOutput=document.getElementById('hashOutput');
+fileInput.addEventListener('change',async(e)=>{
+const file=e.target.files[0];
+if(!file)return;
+hashOutput.textContent='Calculando...';
+try{
+const arrayBuffer=await file.arrayBuffer();
+const hashBuffer=await crypto.subtle.digest('SHA-256',arrayBuffer);
+const hashArray=Array.from(new Uint8Array(hashBuffer));
+const hashHex=hashArray.map(b=>b.toString(16).padStart(2,'0')).join('');
+hashOutput.textContent=hashHex;
+}catch(err){hashOutput.textContent='Error: '+err.message}
+});
+</script>
+</body>
+</html>
