@@ -38,3 +38,28 @@ Kronos-Vault opera sobre una infraestructura **mínima, verificable y de bajo co
 | Pentest anual | Proveedor certificado | Seguridad ofensiva |
 
 ## Flujo de datos
+
+Titular → Hash local (navegador) → JSON → 
+Sello temporal (Safe Creative) → 
+Anclaje blockchain (Ethereum) → 
+Registro público (GitHub) → 
+Verificación independiente (cualquier tercero
+
+
+## Principios de diseño
+
+1. **Mínima superficie de ataque** — Menos componentes = menos vulnerabilidades.
+2. **Verificabilidad pública** — Todo el código es auditable.
+3. **Bajo costo sostenible** — No depender de infraestructura cara para operar.
+4. **Escalabilidad incremental** — Cada fase agrega solo lo necesario.
+5. **Independencia del emisor** — La verificación no requiere al autor.
+
+## Riesgos conocidos
+
+- Dependencia de GitHub (mitigable con mirrors).
+- Dependencia de Safe Creative (mitigable con múltiples QTSA).
+- Dependencia de Ethereum (mitigable con multi-chain).
+
+## Revisión
+
+Este documento se actualiza al inicio de cada fase.
