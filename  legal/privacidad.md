@@ -90,4 +90,8 @@ En la UE: la autoridad de control del Estado miembro de residencia.
 
 ## 13. Contacto
 
-**Email:** hola@kronoslegado.com
+**Responsable:** Marco Antonio Rojas Valdovinos
+**Domicilio:** Tecamac, Estado de México, México
+**Email de privacidad:** proyectokronos@hotmail.com
+**Email legal:** marco.a.rojas.v@hotmail.com
+**WhatsApp:** +52 722 586 2335
