@@ -38,3 +38,51 @@ Se calculan sobre el archivo original, sin transformación previa.
 Codificación: hexadecimal en minúsculas.
 
 ## 4. Procedimiento de sellado
+
+## 5. Procedimiento de validación
+
+Ver [`procedimiento-validacion.md`](procedimiento-validacion.md).
+
+## 6. Estados del sello
+
+- **activo** — válido y vigente.
+- **revocado** — anulado por causal documentada.
+- **expirado** — fuera del alcance temporal declarado.
+
+El estado se registra en `registro/revocados.json` y se refleja en `indice-publico.json`.
+
+## 7. Versionado
+
+El estándar sigue **SemVer 2.0.0**:
+
+- **MAJOR** — cambios incompatibles en el schema.
+- **MINOR** — adiciones compatibles.
+- **PATCH** — correcciones sin cambio de schema.
+
+La versión actual se declara en `VERSION` y en cada sello (`schema_version`).
+
+## 8. Compatibilidad
+
+Los sellos de una versión MAJOR anterior son verificables en la nueva versión mediante validadores específicos. Nunca se reescriben retroactivamente.
+
+## 9. Independencia del emisor
+
+El estándar permite que cualquier tercero verifique un sello usando únicamente:
+
+1. El JSON del sello.
+2. El schema oficial.
+3. El archivo original del titular.
+
+No se requiere conexión con servidores del emisor original.
+
+## 10. Alineación con estándares
+
+Ver [`cumplimiento-iso.md`](cumplimiento-iso.md).
+
+## 11. Limitaciones conocidas
+
+- La huella digital prueba existencia e integridad, **no autoría intelectual**.
+- El sello de tiempo prueba fecha, **no veracidad del contenido**.
+- El anclaje en blockchain prueba inclusión en cadena, **no legitimidad legal universal**.
+
+Ver [`limitaciones-legales.md`](limitaciones-legales.md).
