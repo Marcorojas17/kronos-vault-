@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kronoslegado.com/schemas/sello-kronos-vault.schema.json",
+  "title": "Sello Kronos-Vault",
+  "description": "Esquema oficial de un sello Kronos-Vault v0.1.0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "estado",
+    "fecha_sellado",
+    "titular",
+    "obra",
+    "licencia",
+    "principios"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^0\\.[0-9]+\\.[0-9]+$",
+      "description": "Versión del schema aplicada al sello."
+    },
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Identificador único del sello."
+    },
+    "estado": {
+      "type": "string",
+      "enum": ["activo", "revocado", "expirado"]
+    },
+    "fecha_sellado": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Fecha y hora en UTC, formato ISO 8601."
+    },
+    "titular": {
+      "type": "object",
+      "required": ["nombre", "identificador"],
+      "properties": {
+        "nombre": { "type": "string", "minLength": 1 },
+        "identificador": { "type": "string", "minLength": 1 },
+        "email": { "type": "string", "format": "email" },
+        "pais": { "type": "string", "minLength": 2, "maxLength": 3 }
+      }
+    },
+    "obra": {
+      "type": "object",
+      "required": ["titulo", "tipo", "archivo", "tamano_bytes", "sha256", "sha512"],
+      "properties": {
+        "titulo": { "type": "string", "minLength": 1 },
+        "tipo": { "type": "string" },
+        "archivo": { "type": "string", "minLength": 1 },
+        "tamano_bytes": { "type": "integer", "minimum": 1 },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sha512": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{128}$"
+        },
+        "sha1": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      }
+    },
+    "sellos_de_tiempo": {
+      "type": "object",
+      "properties": {
+        "interno": {
+          "type": "object",
+          "required": ["autoridad", "token"],
+          "properties": {
+            "autoridad": { "type": "string" },
+            "token": { "type": "string" }
+          }
+        },
+        "externo_qtsa": {
+          "type": "object",
+          "required": ["autoridad", "token"],
+          "properties": {
+            "autoridad": { "type": "string" },
+            "token": { "type": "string" },
+            "pais": { "type": "string" }
+          }
+        }
+      }
+    },
+    "blockchain": {
+      "type": "object",
+      "properties": {
+        "cadena": { "type": "string" },
+        "tx_hash": { "type": "string" },
+        "bloque": { "type": "integer", "minimum": 0 },
+        "url_explorador": { "type": "string", "format": "uri" }
+      }
+    },
+    "licencia": {
+      "type": "object",
+      "required": ["tipo", "url", "prohibe_entrenamiento_ia"],
+      "properties": {
+        "tipo": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "prohibe_entrenamiento_ia": { "type": "boolean" },
+        "prohibe_uso_comercial": { "type": "boolean" },
+        "requiere_atribucion": { "type": "boolean" }
+      }
+    },
+    "principios": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "string" },
+      "description": "Los 6 principios fundamentales del estándar."
+    },
+    "firma": {
+      "type": "object",
+      "properties": {
+        "algoritmo": { "type": "string" },
+        "valor": { "type": "string" },
+        "emisor": { "type": "string" }
+      }
+    }
+  }
+}
