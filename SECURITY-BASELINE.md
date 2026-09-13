@@ -6,18 +6,18 @@ Nivel declarado: **Reforzado documentado** (no gubernamental).
 
 ### Criptografía
 - SHA-256 y SHA-512 para integridad.
-- Sellado temporal cualificado (eIDAS).
-- Anclaje en Ethereum.
+- Sellado temporal cualificado (eIDAS / QTSA).
+- Anclaje en blockchain Ethereum.
 
 ### Custodia
 - Repositorio Git con historial inmutable.
-- Tags firmados por versión.
 - Registro público solo-adicionable.
+- Hashes verificables públicamente.
 
 ### Gobernanza
 - Separación de funciones documentada.
-- Doble aprobación para cambios MAJOR.
 - Proceso de cambios público.
+- Doble aprobación para cambios MAJOR (planificado).
 
 ### Operación
 - Respuesta a incidentes en 48h.
@@ -26,20 +26,24 @@ Nivel declarado: **Reforzado documentado** (no gubernamental).
 
 ## Controles planificados (Fase 2)
 
-- Firma GPG obligatoria de todos los releases.
-- SBOM automatizado con Syft.
-- CI/CD con GitHub Actions (verificación de integridad).
-- Almacenamiento WORM en S3 con Object Lock.
-- MFA en todas las cuentas críticas.
+- Firma GPG obligatoria de releases.
+- SBOM automatizado.
+- CI/CD con verificación de integridad.
+- Almacenamiento WORM.
+- MFA en cuentas críticas.
+
+## Controles planificados (Fase 3)
+
 - Pentest anual externo.
 - Auditoría independiente cada 2 años.
+- Certificación ISO 27001.
 
-## Controles fuera de alcance
+## Fuera de alcance
 
-- Certificación ISO formal (requiere auditor externo pagado).
+- Certificación ISO formal (requiere auditor pagado).
 - Acreditación como autoridad de certificación.
-- Nivel gubernamental específico (no aplicable a proyecto privado).
+- Nivel gubernamental específico.
 
 ## Declaración
 
-Kronos-Vault **declara lo que implementa**. No declara lo que no puede demostrar. Esta es la base de un estándar serio.
+Kronos-Vault declara lo que implementa. No declara lo que no puede demostrar. Esta es la base de un estándar serio.
