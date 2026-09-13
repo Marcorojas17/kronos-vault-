@@ -81,3 +81,61 @@ Contacto
 Email: proyectokronos@hotmail.com
 Email legal: marco.a.rojas.v@hotmail.com
 
+
+
+---
+
+## 📁 BLOQUE F — SBOM y checksums (2 archivos)
+
+### F1. `SBOM.spdx.json`
+
+```json
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "kronos-vault-0.1.0",
+  "documentNamespace": "https://github.com/Marcorojas17/kronos-vault/sbom-0.1.0",
+  "creationInfo": {
+    "created": "2026-07-14T00:46:00Z",
+    "creators": [
+      "Person: Marco Antonio Rojas Valdovinos (proyectokronos@hotmail.com)"
+    ],
+    "licenseListVersion": "3.22"
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-KronosVault",
+      "name": "kronos-vault",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "https://github.com/Marcorojas17/kronos-vault",
+      "filesAnalyzed": false,
+      "licenseConcluded": "CC-BY-NC-ND-4.0",
+      "licenseDeclared": "CC-BY-NC-ND-4.0",
+      "copyrightText": "Copyright (c) 2026 Marco Antonio Rojas Valdovinos",
+      "supplier": "Person: Marco Antonio Rojas Valdovinos"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-Schemas",
+      "name": "kronos-vault-schemas",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "https://github.com/Marcorojas17/kronos-vault/schemas",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2026 Marco Antonio Rojas Valdovinos"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relatedSpdxElement": "SPDXRef-Package-KronosVault",
+      "relationshipType": "DESCRIBES"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-KronosVault",
+      "relatedSpdxElement": "SPDXRef-Package-Schemas",
+      "relationshipType": "CONTAINS"
+    }
+  ]
+}
