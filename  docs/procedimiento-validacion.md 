@@ -1,0 +1,79 @@
+# Procedimiento de validación
+
+Cualquier tercero puede validar un sello Kronos-Vault sin depender del autor. Este documento describe cómo.
+
+## 1. Requisitos
+
+- El archivo JSON del sello.
+- El archivo original del titular.
+- El schema oficial (`schemas/sello-kronos-vault.schema.json`).
+- Un validador JSON Schema (Draft 2020-12).
+- (Opcional) Acceso a la autoridad de sellado de tiempo.
+
+## 2. Pasos
+
+### Paso 1 — Validar el schema
+
+validador --schema schemas/sello-kronos-vault.schema.json sello.json
+
+Debe retornar `válido`. Si no, el sello está malformado.
+
+### Paso 2 — Recalcular huellas
+
+
+
+Deben coincidir con los campos `obra.sha256` y `obra.sha512` del sello.
+
+### Paso 3 — Verificar tamaño
+
+
+
+Debe coincidir con `obra.tamano_bytes`.
+
+### Paso 4 — Verificar sello de tiempo
+
+Consultar la autoridad emisora (interna o QTSA) usando el `timestamp_token` del sello.
+
+### Paso 5 — Verificar estado
+
+Consultar `registro/indice-publico.json` y `registro/revocados.json`. El sello debe aparecer como `activo`.
+
+### Paso 6 — Verificar anclaje (si aplica)
+
+Si el sello declara `blockchain.tx_hash`, verificar en el explorador correspondiente (ej. Etherscan).
+
+### Paso 7 — Emitir resultado
+
+El validador produce un informe con:
+
+- Estado: `válido` / `inválido` / `indeterminado`.
+- Fecha de validación.
+- Campos verificados.
+- Campos no verificables.
+
+## 3. Casos de resultado
+
+| Escenario | Resultado |
+|-----------|-----------|
+| Schema válido + hashes coinciden + sello activo | `válido` |
+| Schema inválido | `inválido` |
+| Hash no coincide | `inválido` — archivo alterado |
+| Sello revocado | `inválido` — revocado |
+| Autoridad de tiempo inaccesible | `indeterminado` |
+
+## 4. Independencia
+
+Este procedimiento no requiere:
+
+- Contacto con el autor.
+- Acceso a servidores de Kronos-Vault.
+- Confianza en el emisor.
+
+Solo requiere el JSON, el schema y el archivo original.
+
+## 5. Herramientas sugeridas
+
+- `ajv` (Node.js) para validación de schema.
+- `openssl` o `sha256sum` para hashes.
+- Cualquier explorador blockchain público.
+
