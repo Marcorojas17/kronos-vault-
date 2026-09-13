@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kronos-vault.github.io/schemas/identidad.schema.json",
+  "title": "Identidad",
+  "description": "Datos del titular de una obra",
+  "type": "object",
+  "required": ["nombre", "identificador"],
+  "additionalProperties": false,
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "identificador": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "pais": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "Código ISO 3166-1 alpha-3"
+    },
+    "seudonimo": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "sitio_web": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
