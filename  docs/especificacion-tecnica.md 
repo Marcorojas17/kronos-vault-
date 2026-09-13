@@ -1,0 +1,40 @@
+# Especificación Técnica Kronos-Vault v0.1.0
+
+## 1. Objetivo
+
+Definir el formato, procedimiento y reglas de un **sello Kronos-Vault** que permita:
+
+1. Probar la existencia de un archivo digital en una fecha determinada.
+2. Verificar su integridad sin depender del emisor.
+3. Preservar la cadena de custodia ante modificaciones.
+4. Prohibir explícitamente usos no autorizados (comercial, IA).
+
+## 2. Componentes
+
+Un sello Kronos-Vault consta de:
+
+| Componente | Obligatorio | Descripción |
+|------------|-------------|-------------|
+| Identificador | Sí | UUID v4 o equivalente. |
+| Huellas digitales | Sí | SHA-256 y SHA-512 del archivo original. |
+| Tamaño del archivo | Sí | En bytes. |
+| Fecha de sellado | Sí | ISO 8601 en UTC. |
+| Titular | Sí | Nombre + identificador. |
+| Sello de tiempo interno | Sí | Emitido por autoridad local. |
+| Sello de tiempo externo (QTSA) | Recomendado | Emitido por autoridad cualificada eIDAS. |
+| Anclaje en blockchain | Opcional | Hash de auditoría en cadena pública. |
+| Licencia | Sí | Términos de uso aplicables. |
+| Estado | Sí | `activo`, `revocado`, `expirado`. |
+| Firma | Recomendado | Firma digital del emisor. |
+
+## 3. Huellas digitales
+
+Se calculan sobre el archivo original, sin transformación previa.
+
+- **SHA-256** — obligatorio.
+- **SHA-512** — obligatorio.
+- **SHA-1** — opcional, solo por compatibilidad retroactiva.
+
+Codificación: hexadecimal en minúsculas.
+
+## 4. Procedimiento de sellado
