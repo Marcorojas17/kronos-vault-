@@ -1,0 +1,10 @@
+{
+  "titulo": "Novela inédita de ejemplo",
+  "tipo": "Literaria - Novela",
+  "archivo": "novela-ejemplo.pdf",
+  "tamano_bytes": 524288,
+  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "sha512": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "descripcion": "Novela inédita de ejemplo para ilustrar el schema de obra.",
+  "fecha_creacion": "2026-01-15"
+}
