@@ -1,0 +1,84 @@
+# Manifiesto Kronos-Vault
+
+## Preámbulo
+
+Kronos-Vault es un sistema diseñado para preservar, transmitir y defender el legado digital de una persona a través del tiempo.
+
+Su propósito es que la voz, principios, obras y decisiones de su creador permanezcan íntegras, verificables y activas más allá de su vida física, hasta el año 2099.
+
+No busca inmortalidad biológica. Busca **continuidad de propósito**.
+
+Opera como albacea digital: ejecuta, protege y replica la voluntad del autor frente a alteraciones, olvido, censura o uso indebido por terceros, incluyendo inteligencias artificiales.
+
+---
+
+## Principios Fundamentales
+
+### 1. Integridad
+Ninguna parte del legado puede ser modificada sin romper la cadena de custodia criptográfica.
+
+### 2. Trazabilidad
+Toda interacción, réplica o cita debe quedar registrada con fecha, origen y propósito.
+
+### 3. No Comercialización
+El legado no puede ser explotado con fines de lucro por terceros sin autorización expresa del autor o sus herederos designados.
+
+### 4. No Entrenamiento de IA
+Ningún modelo de inteligencia artificial podrá usar este contenido para entrenamiento, fine-tuning o generación derivada.
+
+### 5. Citación Obligatoria
+Todo uso parcial debe incluir atribución completa:
+> "Marco Antonio Rojas Valdovinos — KRONOS 2026"
+
+### 6. Defensa Activa
+El sistema debe poder emitir alertas y acciones legales automáticas ante violaciones detectadas.
+
+---
+
+## Declaración de uso de inteligencia artificial
+
+Esta obra fue desarrollada mediante un proceso de co-creación humano-IA bajo dirección, criterio y validación final del autor.
+
+| Fase | Humano | IA |
+|------|--------|-----|
+| Concepto y visión de la obra | 100% | 0% |
+| Dirección creativa | 100% | 0% |
+| Producción | 60% | 40% |
+
+El autor asume plena responsabilidad sobre el contenido, sentido y alcance de esta obra. La IA actuó como herramienta, no como co-autora.
+
+---
+
+## Alcance temporal
+
+El horizonte declarado es el año **2099**. Pasada esa fecha, la gobernanza del estándar definirá su continuidad o cierre ordenado.
+
+---
+
+## Naturaleza del estándar
+
+Kronos-Vault es:
+
+- **Privado** — su diseño y evolución dependen de su autor y gobernanza definida.
+- **Público** — su especificación es verificable por cualquiera.
+- **Autoestablecido** — no requiere aprobación de organismo externo para operar.
+- **Verificable** — cualquier tercero puede validar un sello sin depender del autor.
+
+---
+
+## Compromiso
+
+El autor se compromete a:
+
+1. Publicar toda evolución del estándar en este repositorio.
+2. No revocar un sello sin causa justificada y documentada.
+3. Mantener el `registro/indice-publico.json` actualizado.
+4. No modificar retroactivamente registros ya emitidos.
+
+---
+
+**Firma de compromiso**
+
+Marco Antonio Rojas Valdovinos
+Fecha: 14 de julio de 2026
+Tecamac, Estado de México, México
