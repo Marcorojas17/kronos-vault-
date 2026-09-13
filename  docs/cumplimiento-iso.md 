@@ -1,0 +1,78 @@
+# Cumplimiento y alineación con estándares
+
+## Declaración
+
+Kronos-Vault **no afirma** estar certificado por ningún organismo externo. Su diseño se **alinea voluntariamente** con los siguientes estándares mediante autoevaluación documentada.
+
+---
+
+## ISO 14721 (OAIS) — Modelo de referencia para preservación a largo plazo
+
+| Requisito OAIS | Cómo lo aborda Kronos-Vault |
+|----------------|-----------------------------|
+| Preservación a largo plazo | Horizonte declarado: 2099. |
+| Independencia del productor | El sello es verificable sin el autor. |
+| Metadatos de preservación | JSON Schema versionado + registro público. |
+| Integridad | Huellas SHA-256 y SHA-512. |
+| Trazabilidad | Registro de emisión, cambios y revocaciones. |
+| Migración tecnológica | Especificación independiente del formato del archivo. |
+| Auditoría | Repositorio público con historial Git. |
+
+---
+
+## ISO/IEC 27001 — Seguridad de la información
+
+| Control | Implementación declarada |
+|---------|--------------------------|
+| A.5 Políticas de seguridad | Documentadas en `docs/` y `gobernanza/`. |
+| A.8 Gestión de activos | Inventario en `registro/indice-publico.json`. |
+| A.12 Seguridad en operaciones | Procedimientos versionados. |
+| A.16 Gestión de incidentes | Ver `SECURITY.md`. |
+| A.18 Cumplimiento | Ver `legal/`. |
+
+**Nota:** no se ha realizado auditoría formal. Esta tabla refleja alineación documental, no certificación.
+
+---
+
+## eIDAS (UE) — Sellado de tiempo cualificado
+
+El sello externo de Safe Creative (Firmaprofesional ICA B02 QUALIFIED QTSA 2022) es una autoridad de sellado de tiempo reconocida bajo eIDAS. Kronos-Vault utiliza este sello como capa de fecha cualificada.
+
+---
+
+## Convenio de Berna
+
+La obra Kronos-Vault está protegida automáticamente en los 181 países firmantes del Convenio de Berna, sin necesidad de registro previo. El certificado Safe Creative actúa como prueba de fecha cierta.
+
+---
+
+## DMCA (EE.UU.)
+
+El titular puede emitir notificaciones DMCA a proveedores de servicios ante usos no autorizados. El sello Kronos-Vault sirve como prueba documental.
+
+---
+
+## LFPDPPP (México)
+
+El tratamiento de datos personales se rige por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares. Ver [`legal/privacidad.md`](../legal/privacidad.md).
+
+---
+
+## GDPR (UE) — cuando aplique
+
+Si un titular reside en la Unión Europea, se reconocen los derechos ARCO+ (acceso, rectificación, cancelación, oposición, portabilidad, limitación). Ver [`legal/privacidad.md`](../legal/privacidad.md).
+
+---
+
+## Lo que NO se afirma
+
+- No hay certificación ISO emitida por tercero.
+- No hay auditoría externa de seguridad.
+- No hay acreditación como autoridad de certificación.
+- No hay garantía legal universal: la validez probatoria depende de la jurisdicción.
+
+---
+
+## Compromiso
+
+El autor se compromete a actualizar esta tabla cada vez que se realice una autoevaluación formal o se obtenga una certificación externa.
