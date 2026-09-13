@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kronos-vault.github.io/schemas/auditoria.schema.json",
+  "title": "Auditoría",
+  "description": "Registro de auditoría de un sello Kronos-Vault",
+  "type": "object",
+  "required": ["id", "sello_id", "fecha", "tipo", "resultado", "auditor"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sello_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fecha": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": ["interna", "tecnica", "externa", "pentest"]
+    },
+    "resultado": {
+      "type": "string",
+      "enum": ["valido", "invalido", "indeterminado"]
+    },
+    "auditor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hallazgos": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recomendaciones": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "informe_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}
